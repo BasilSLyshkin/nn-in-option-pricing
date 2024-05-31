@@ -35,7 +35,7 @@ class Metrics:
             for k, model in enumerate(self.columns):
                 mask = np.isclose(X_test[:,0], int(mtrt)/252, 1e-6)
                 if mtrt == '30':
-                    mask = self.X_test[:,0]*252 >= 29
+                    mask = self.X_test[:, 0]*252 >= 29
 
                 y_pred = self.predictions[k]
                 rmse, mae = self._evaluate(y_pred, mask)
